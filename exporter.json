@@ -1,0 +1,23 @@
+{
+    "id": "io.supernova.android-assets",
+    "name": "Android Assets",
+    "description": "Android asset exporter",
+    "author": "Jiri Trecak",
+    "organization": "Supernova",
+    "homepage": "https://supernova.io",
+    "source_dir": "src",
+    "version": "1.0",
+    "config": {
+        "sources": "sources.json",
+        "output": "output.json",
+        "js": "src/js/helpers.js"
+    },
+    "engines": {
+        "pulsar": "1.0.0",
+        "supernova": "1.0.0"
+    },
+    "tags": [
+        "Assets",
+        "Android"
+    ]
+}

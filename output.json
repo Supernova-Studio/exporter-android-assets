@@ -1,0 +1,15 @@
+{
+    "blueprints": [],
+    "images": [
+        {
+            "write_using": "asset_path.pr",
+            "scale": "1x",
+            "format": "png"
+        }, 
+        {
+            "write_using": "asset_path.pr",
+            "scale": "2x",
+            "format": "png"
+        }
+    ]
+}
