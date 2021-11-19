@@ -1,0 +1,21 @@
+{[ let extension = asset.format /]}
+{[ let folder = "" /]}
+
+{* Prepare folder based on scale *}
+{[ switch asset.scale ]}
+    {[ case "x1" ]}
+        {[ folder = "res/drawable-hdpi" /]}
+    {[ case "x2" ]}
+        {[ folder = "res/drawable-xhdpi" /]}
+    {[ case "x3" ]}
+        {[ folder = "res/drawable-xxhdpi" /]}
+    {[ case "x4" ]}
+        {[ folder = "res/drawable-xxxhdpi" /]}
+{[/]}
+
+{* Generate name as [originalName][-numberOfDuplicates][extension] *}
+{[ let duplicateExtension = (asset.previouslyDuplicatedNames > 0 ? ("-" + asset.previouslyDuplicatedNames) : "") /]}
+{[ let name = (asset.originalName.lowercased().replacing(" ", "-") + duplicateExtension + "." + asset.format) /]}
+
+{* Retrieve asset path *}
+{{ folder }}/{{ asset.group.name }}{{ name }}

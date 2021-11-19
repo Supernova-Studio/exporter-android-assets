@@ -1,15 +1,28 @@
 {
     "blueprints": [],
-    "images": [
-        {
-            "write_using": "asset_path.pr",
+    "assets": [{
+            "write_using": "asset_path_android.pr",
             "scale": "1x",
-            "format": "png"
-        }, 
+            "format": "png",
+            "type": "image"
+        },
         {
-            "write_using": "asset_path.pr",
+            "write_using": "asset_path_android.pr",
             "scale": "2x",
-            "format": "png"
+            "format": "png",
+            "type": "image"
+        },
+        {
+            "write_using": "asset_path_android.pr",
+            "scale": "3x",
+            "format": "png",
+            "type": "image"
+        },
+        {
+            "write_using": "asset_path_android.pr",
+            "scale": "4x",
+            "format": "png",
+            "type": "image"
         }
     ]
 }

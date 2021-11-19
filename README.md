@@ -1,24 +1,65 @@
 <img src="./readme-icon.png" alt="Supernova Logo" style="max-width:100%;">
 
 
-[Supernova](https://supernova.io) is a design system platform that allows you to seamlessly translate your design system data to production-ready code. Supernova works with any platform or tech stack, is used by many developers and organizations around the world, and can help you save time by replacing manual and repetitive tasks that all developers hate. To learn everything Supernova, please check out our [developer documentation](https://developers.supernova.io/).
+[Supernova](https://supernova.io) is a design system platform that manages your assets, tokens, components and allows you to write spectacular documentations for your entire teams. And because you found your way here, you are probably interested in its most advanced functionality - automatic hand-off of design and development assets, tokens and data in general. To learn everything Supernova, please check out our [developer documentation](https://developers.supernova.io/).
 
 
 # Android Asset Exporter
 
-
 The Android exporter allows you to **produce a android asset packs** in such a way that it can be immediately used in your production codebase. Specifically, this exporter is capable of exporting full asset resource directory, with all needed resolutions.
 
+### Exporter Output
+
+This exporter will render image assets defined inside one specific brand and will produce the following structure:
+
+```
+/res/drawable-hdpi
+  |- burger.png
+  |- user.png
+
+/res/drawable-xhdpi
+  |- burger.png
+  |- user.png
+
+/res/drawable-xxhdpi
+  |- burger.png
+  |- user.png
+
+/res/drawable-xxxxhdpi
+  |- burger.png
+  |- user.png
+```
+
+### Naming
+
+The names of icons will be constructed from the original name and path built from segments which correspond to groups the Supernova (and Figma) groups. For example:
+
+```
+Icons
+  |- Top Menu
+     |- burger
+     |- user
+```
+
+Names follow `lower_camel_case` convention and will be converted to the following icon path:
+
+```
+/res/drawable-(xxx)hdpi/icons_top_menu_burger.png
+```
+
+This behavior can be fully customized by simply modifying the path generation template file `asset_path_android.pr`. Simply fork, modify and upload as your version of the exporter. If you have never done this before, [follow our guide to modifying existing exporters](https://developers.supernova.io/building-exporters/cloning-exporters).
 
 ## Installing
 
 In order to make the Supernova Android Asset exporter available for your organization so you can start generating code from your design system, please follow the installation guide in our [developer documentation](https://developers.supernova.io/using-exporters/installing-exporters).
+
 
 ## Reporting Bugs or Requesting Features
 
 In order to faciliate easy communication and speed up delivery of fixes and features for this exporter, we require everyone to log all issues and feature requests through the issue tracking of this repository. 
 
 Please read through the [existing issues](../../issues) before you open a new issue! It might be that we have already discussed it before. If you are sure your request wasn't mentioned just yet, proceed to [open a new issue](../../issues) and fill in the required information. Thank you!
+
 
 ## Contributing
 
