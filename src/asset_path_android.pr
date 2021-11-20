@@ -14,8 +14,16 @@
 {[/]}
 
 {* Generate name as [originalName][-numberOfDuplicates][extension] *}
-{[ let duplicateExtension = (asset.previouslyDuplicatedNames > 0 ? ("-" + asset.previouslyDuplicatedNames) : "") /]}
-{[ let name = (asset.originalName.lowercased().replacing(" ", "-") + duplicateExtension + "." + asset.format) /]}
+{[ let duplicateExtension = (asset.previouslyDuplicatedNames > 0 ? ("_" + asset.previouslyDuplicatedNames) : "") /]}
+{[ let name = (asset.originalName.lowercased().replacing(" ", "_") + duplicateExtension + "." + asset.format) /]}
+
+{* Generate path from segments *}
+{[ let path = (asset.group.path.append(asset.group.name).join("_").replacing(" ", "_").lowercased()) /]}
+{[ log path /]}
 
 {* Retrieve asset path *}
-{{ folder }}/{{ asset.group.name }}{{ name }}
+{[ if (path.count() > 0) ]}
+    {{ folder }}/{{ path + "_" }}{{ name }}
+{[ else ]}
+    {{ folder }}/{{ name }}
+{[/]}
