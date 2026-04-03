@@ -1,12 +1,12 @@
 {
-    "id": "io.supernova.android-assets",
-    "name": "Android Assets",
+    "id": "sergii.io.supernova.android-assets",
+    "name": "Sergii's Android Assets",
     "description": "Export vector assets for Android",
     "author": "Jiri Trecak",
     "organization": "Supernova",
     "homepage": "https://supernova.io",
     "source_dir": "src",
-    "version": "1.2",
+    "version": "1.2.3",
     "usesBrands": true,
     "config": {
         "sources": "sources.json",
